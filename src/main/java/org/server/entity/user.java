@@ -1,24 +1,34 @@
 package org.server.entity;
 
 public class user {
-    private int userId;
-    private String username;
+    private Integer userId;
+    private Integer userAccount;
+    private String userName;
     private String password;
+    private String userType;
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    public String getUsername() {
-        return username;
+    public Integer getUserAccount() {
+        return userAccount;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserAccount(Integer userAccount) {
+        this.userAccount = userAccount;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -36,7 +46,4 @@ public class user {
     public void setUserType(String userType) {
         this.userType = userType;
     }
-
-    private String userType;
-
 }
