@@ -16,7 +16,7 @@ public interface userService {
 
     public Integer add(user user);
 
-    public user userLogin(Integer userAccount, String password);
+    public user userLogin(String userAccount, String password);
 
 
 }

@@ -27,6 +27,6 @@ public interface userMapper {
     public Integer add(user user);
 
     @Select("select * from user where userAccount = #{userAccount} and password = #{password}")
-    public user userLogin(Integer userAccount, String password);
+    public user userLogin(String userAccount, String password);
 
 }

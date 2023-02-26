@@ -36,7 +36,7 @@ public class userController {
         return ApiResultHandler.success();
     }
 
-    @PutMapping("/user/{adminId}")
+    @PutMapping("/user/{userId}")
     public ApiResult update(@PathVariable("userId") Integer userId, user user) {
         return ApiResultHandler.success(userServiceimpl.update(user));
     }
@@ -49,7 +49,7 @@ public class userController {
     @PostMapping("/login")
     public ApiResult login(@RequestBody user user) {
 
-        Integer userAccount = user.getUserAccount();
+        String userAccount = user.getUserAccount();
         String password = user.getPassword();
         user userRes = userServiceimpl.userLogin(userAccount, password);
         if (userRes != null) {

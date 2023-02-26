@@ -20,13 +20,13 @@ public class userServiceImpl implements userService {
     }
 
     @Override
-    public user findById(Integer adminId) {
-        return userMapper.findById(adminId);
+    public user findById(Integer userId) {
+        return userMapper.findById(userId);
     }
 
     @Override
-    public Integer deleteById(Integer adminId) {
-        return userMapper.deleteById(adminId);
+    public Integer deleteById(Integer userId) {
+        return userMapper.deleteById(userId);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class userServiceImpl implements userService {
     }
 
     @Override
-    public user userLogin(Integer userAccount, String password) {
+    public user userLogin(String userAccount, String password) {
         return userMapper.userLogin(userAccount, password);
     }
 }

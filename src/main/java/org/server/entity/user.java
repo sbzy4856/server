@@ -2,7 +2,7 @@ package org.server.entity;
 
 public class user {
     private Integer userId;
-    private Integer userAccount;
+    private String userAccount;
     private String userName;
     private String password;
     private String userType;
@@ -15,11 +15,11 @@ public class user {
         this.userId = userId;
     }
 
-    public Integer getUserAccount() {
+    public String getUserAccount() {
         return userAccount;
     }
 
-    public void setUserAccount(Integer userAccount) {
+    public void setUserAccount(String userAccount) {
         this.userAccount = userAccount;
     }
 
