@@ -55,6 +55,6 @@ public class userController {
         if (userRes != null) {
             return ApiResultHandler.buildApiResult(200, "请求成功", userRes);
         }
-        return ApiResultHandler.buildApiResult(400, "请求失败", null);
+        return ApiResultHandler.buildApiResult(400, "账号或密码错误", null);
     }
 }

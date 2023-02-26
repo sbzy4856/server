@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="277eb011-6dce-45a6-b170-e20264fbe12a" name="变更" comment="用户">
+    <list default="true" id="277eb011-6dce-45a6-b170-e20264fbe12a" name="变更" comment="登录">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/userController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/entity/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/entity/user.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/mapper/userMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/userMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/service/userService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/service/userService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/userServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/userServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +102,7 @@
       <workItem from="1677303225520" duration="1443000" />
       <workItem from="1677304693088" duration="42000" />
       <workItem from="1677304748271" duration="8836000" />
+      <workItem from="1677392595370" duration="972000" />
     </task>
     <task id="LOCAL-00001" summary="``">
       <created>1677157360791</created>
@@ -150,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677306551989</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="登录">
+      <created>1677392692809</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677392692809</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +174,7 @@
     <MESSAGE value="``" />
     <MESSAGE value="1" />
     <MESSAGE value="用户" />
-    <option name="LAST_COMMIT_MESSAGE" value="用户" />
+    <MESSAGE value="登录" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录" />
   </component>
 </project>
