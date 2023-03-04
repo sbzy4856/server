@@ -42,7 +42,7 @@ public class userController {
     }
 
     @PostMapping("/user")
-    public ApiResult add(user user) {
+    public ApiResult add(@RequestBody user user) {
         return ApiResultHandler.success(userServiceimpl.add(user));
     }
 
