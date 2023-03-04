@@ -19,7 +19,7 @@ public interface userMapper {
 
     @Update("update user set userName = #{userName}," +
             "password = #{password} where userId = #{userId}")
-    public Integer update(user user);
+    public Integer update(Integer userId, user user);
 
     @Options(useGeneratedKeys = true, keyProperty = "userId")
     @Insert("insert into user(userAccount,userName,password,userType) " +

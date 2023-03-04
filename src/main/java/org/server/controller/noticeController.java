@@ -26,8 +26,6 @@ public class noticeController {
     public ApiResult findAll(@RequestParam("size") Integer size, @RequestParam("page") Integer page,
                              @RequestParam("title") String title, @RequestParam("state") String state) {
         Page<notice> noticePage = new Page<>(page, size);
-        System.out.println(title);
-        System.out.println(state);
         if (state == "" && title == "") {
             IPage<notice> noticeIPage = noticeServiceimpl.findAll(noticePage);
             return ApiResultHandler.buildApiResult(200, "查询所有公告", noticeIPage);
@@ -51,7 +49,12 @@ public class noticeController {
 
     @PutMapping("/notice/{noticeId}")
     public ApiResult update(@PathVariable("noticeId") Integer noticeId, notice notice) {
-        return ApiResultHandler.success(noticeServiceimpl.update(notice));
+        return ApiResultHandler.success(noticeServiceimpl.update(noticeId, notice));
+    }
+
+    @PutMapping("/notice/state/{noticeId}")
+    public ApiResult updateState(@PathVariable("noticeId") Integer noticeId) {
+        return ApiResultHandler.success(noticeServiceimpl.updateState(noticeId, "已发布"));
     }
 
     @PostMapping("/notice")

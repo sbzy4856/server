@@ -8,14 +8,18 @@ import java.util.List;
 
 public interface noticeService {
     IPage<notice> findAll(Page<notice> page);
-    IPage<notice> selectByTitle(Page<notice> page,String title);
-    IPage<notice> selectByState(Page<notice> page,String state);
-    IPage<notice> selectByTitleAndState(Page<notice> page,String title,String state);
+
+    IPage<notice> selectByTitle(Page<notice> page, String title);
+
+    IPage<notice> selectByState(Page<notice> page, String state);
+
+    IPage<notice> selectByTitleAndState(Page<notice> page, String title, String state);
 
     public Integer deleteById(Integer noticeId);
 
-    public Integer update(notice notice);
-    public Integer updateState(String state);
+    public Integer update(Integer noticeId, notice notice);
+
+    public Integer updateState(Integer noticeId, String state);
 
     public Integer add(notice notice);
 

@@ -38,7 +38,7 @@ public class userController {
 
     @PutMapping("/user/{userId}")
     public ApiResult update(@PathVariable("userId") Integer userId, user user) {
-        return ApiResultHandler.success(userServiceimpl.update(user));
+        return ApiResultHandler.success(userServiceimpl.update(userId, user));
     }
 
     @PostMapping("/user")

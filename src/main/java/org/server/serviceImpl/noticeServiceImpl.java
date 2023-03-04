@@ -40,12 +40,12 @@ public class noticeServiceImpl implements noticeService {
     }
 
     @Override
-    public Integer update(notice notice) {
-        return noticeMapper.update(notice);
+    public Integer update(Integer noticeId, notice notice) {
+        return noticeMapper.update(noticeId, notice);
     }
 
-    public Integer updateState(String noticeState) {
-        return noticeMapper.updateState(noticeState);
+    public Integer updateState(Integer noticeId, String noticeState) {
+        return noticeMapper.updateState(noticeId, noticeState);
     }
 
     @Override
