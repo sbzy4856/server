@@ -24,15 +24,15 @@ public interface noticeMapper {
     @Delete("delete from notice where noticeId = #{noticeId}")
     public Integer deleteById(Integer noticeId);
 
-    @Update("update notice set noticeContent = #{noticeContent},updateTime = #{updateTime}," +
-            "handler = #{handler},noticeTitle = #{noticeTitle} where noticeId = #{noticeId}")
+    @Update("update notice set noticeContent = #{noticeContent}," +
+            "noticeTitle = #{noticeTitle} where noticeId = #{noticeId}")
     public Integer update(Integer noticeId, notice notice);
 
     @Update("update notice set noticeState = #{noticeState} where noticeId = #{noticeId}")
     public Integer updateState(Integer noticeId, String noticeState);
 
     @Options(useGeneratedKeys = true, keyProperty = "noticeId")
-    @Insert("insert into notice(noticeContent,updateTime,handler,noticeState,noticeTitle) " +
-            "values(#{noticeContent},#{updateTime},#{handler},#{noticeState},#{noticeTitle}")
+    @Insert("insert into notice(noticeContent,updateTime,handler,noticeState,noticeTitle)" +
+            "values(#{noticeContent},#{updateTime},#{handler},#{noticeState},#{noticeTitle})")
     public Integer add(notice notice);
 }

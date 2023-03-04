@@ -23,7 +23,7 @@ public interface userMapper {
 
     @Options(useGeneratedKeys = true, keyProperty = "userId")
     @Insert("insert into user(userAccount,userName,password,userType) " +
-            "values(#{userAccount},#{userName},#{password},#{userType}")
+            "values(#{userAccount},#{userName},#{password},#{userType})")
     public Integer add(user user);
 
     @Select("select * from user where userAccount = #{userAccount} and password = #{password}")

@@ -10,6 +10,8 @@ import org.server.serviceImpl.noticeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 @RestController
@@ -49,16 +51,29 @@ public class noticeController {
 
     @PutMapping("/notice/{noticeId}")
     public ApiResult update(@PathVariable("noticeId") Integer noticeId, notice notice) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date = sdf.format(new Date());
         return ApiResultHandler.success(noticeServiceimpl.update(noticeId, notice));
     }
 
     @PutMapping("/notice/state/{noticeId}")
     public ApiResult updateState(@PathVariable("noticeId") Integer noticeId) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date = sdf.format(new Date());
         return ApiResultHandler.success(noticeServiceimpl.updateState(noticeId, "已发布"));
     }
 
     @PostMapping("/notice")
-    public ApiResult add(notice notice) {
+    public ApiResult add(@RequestBody notice notice) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date = sdf.format(new Date());
+        notice.setUpdateTime(date);
+        notice.setHandler("管理员");
+        System.out.println(notice.getHandler());
+        System.out.println(notice.getNoticeContent());
+        System.out.println(notice.getNoticeState());
+        System.out.println(notice.getUpdateTime());
+        System.out.println(notice.getNoticeTitle());
         return ApiResultHandler.success(noticeServiceimpl.add(notice));
     }
 

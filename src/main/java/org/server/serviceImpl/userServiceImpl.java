@@ -36,7 +36,7 @@ public class userServiceImpl implements userService {
 
     @Override
     public Integer add(user user) {
-        return 0;
+        return userMapper.add(user);
     }
 
     @Override

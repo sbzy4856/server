@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="277eb011-6dce-45a6-b170-e20264fbe12a" name="变更" comment="公告">
+    <list default="true" id="277eb011-6dce-45a6-b170-e20264fbe12a" name="变更" comment="bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/ExamsystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/controller/noticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/noticeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/userController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/entity/notice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/entity/notice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/mapper/noticeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/noticeMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/mapper/userMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/userMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/service/noticeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/service/noticeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/service/userService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/service/userService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/noticeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/noticeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/userServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/userServiceImpl.java" afterDir="false" />
     </list>
@@ -62,7 +59,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/11270/Desktop/train-server",
+    "last_opened_file_path": "C:/Users/11270/Desktop/springbootwork",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,7 +115,7 @@
       <workItem from="1677570875232" duration="62000" />
       <workItem from="1677570967019" duration="36000" />
       <workItem from="1677573097579" duration="39000" />
-      <workItem from="1677907033972" duration="11557000" />
+      <workItem from="1677907033972" duration="14223000" />
     </task>
     <task id="LOCAL-00001" summary="``">
       <created>1677157360791</created>
@@ -183,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677917817908</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="bug">
+      <created>1677919797577</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1677919797577</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +210,7 @@
     <MESSAGE value="用户" />
     <MESSAGE value="登录" />
     <MESSAGE value="公告" />
-    <option name="LAST_COMMIT_MESSAGE" value="公告" />
+    <MESSAGE value="bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug" />
   </component>
 </project>

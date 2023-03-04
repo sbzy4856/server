@@ -50,6 +50,6 @@ public class noticeServiceImpl implements noticeService {
 
     @Override
     public Integer add(notice notice) {
-        return 0;
+        return noticeMapper.add(notice);
     }
 }

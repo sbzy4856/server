@@ -5,7 +5,7 @@ import java.util.Date;
 public class notice {
     private int noticeId;
     private String noticeContent;
-    private Date updateTime;
+    private String updateTime;
     private String handler;
     private String noticeState;
     private String noticeTitle;
@@ -26,11 +26,11 @@ public class notice {
         this.noticeContent = noticeContent;
     }
 
-    public Date getUpdateTime() {
+    public String getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
 
