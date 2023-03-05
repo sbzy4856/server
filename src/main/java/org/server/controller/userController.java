@@ -24,7 +24,6 @@ public class userController {
     @GetMapping("/user")
     public ApiResult findAll(@RequestParam("size") Integer size, @RequestParam("page") Integer page,
                              @RequestParam("account") String account, @RequestParam("type") String type) {
-        System.out.println("查询全部");
         Page<user> userPage = new Page<>(page, size);
         if (account == "" && type == "") {
             IPage<user> userIPage = userServiceimpl.findAll(userPage);
@@ -42,12 +41,6 @@ public class userController {
 
     }
 
-    @GetMapping("/user/{userId}")
-    public ApiResult findById(@PathVariable("userId") Integer userId) {
-        System.out.println("根据ID查找");
-        return ApiResultHandler.success(userServiceimpl.findById(userId));
-    }
-
     @DeleteMapping("/user/{userId}")
     public ApiResult deleteById(@PathVariable("userId") Integer userId) {
         userServiceimpl.deleteById(userId);
@@ -61,6 +54,20 @@ public class userController {
 
     @PostMapping("/user")
     public ApiResult add(@RequestBody user user) {
+        user user1 = userServiceimpl.findByAccount(user.getUserAccount());
+        if (user1 != null) {
+            return ApiResultHandler.buildApiResult(400, "已存在账号，请重新输入账号！", null);
+        }
+        if ("学生".equals(user.getUserType())) {
+            user.setUserName("学生");
+            user.setUserState("未激活");
+        } else if ("助教".equals(user.getUserType())) {
+            user.setUserName("助教");
+            user.setUserState("已激活");
+        } else {
+            user.setUserName("教师");
+            user.setUserState("已激活");
+        }
         return ApiResultHandler.success(userServiceimpl.add(user));
     }
 

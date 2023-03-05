@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="277eb011-6dce-45a6-b170-e20264fbe12a" name="变更" comment="bug">
+    <list default="true" id="277eb011-6dce-45a6-b170-e20264fbe12a" name="变更" comment="notice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/controller/noticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/noticeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/userController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/mapper/noticeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/noticeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/entity/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/entity/user.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/mapper/userMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/userMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/service/userService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/service/userService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/noticeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/noticeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/userServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/userServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +115,7 @@
       <workItem from="1677570967019" duration="36000" />
       <workItem from="1677573097579" duration="39000" />
       <workItem from="1677907033972" duration="14575000" />
-      <workItem from="1677992943133" duration="2278000" />
+      <workItem from="1677992943133" duration="6085000" />
     </task>
     <task id="LOCAL-00001" summary="``">
       <created>1677157360791</created>
@@ -196,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677924884685</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="notice">
+      <created>1677995245139</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677995245139</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +225,7 @@
     <MESSAGE value="登录" />
     <MESSAGE value="公告" />
     <MESSAGE value="bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug" />
+    <MESSAGE value="notice" />
+    <option name="LAST_COMMIT_MESSAGE" value="notice" />
   </component>
 </project>

@@ -3,7 +3,6 @@ package org.server.serviceImpl;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.server.entity.user;
-import org.server.entity.user;
 import org.server.mapper.userMapper;
 import org.server.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +34,8 @@ public class userServiceImpl implements userService {
     }
 
     @Override
-    public user findById(Integer userId) {
-        return userMapper.findById(userId);
+    public user findByAccount(String account) {
+        return userMapper.findByAccount(account);
     }
 
     @Override

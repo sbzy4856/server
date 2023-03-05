@@ -6,6 +6,7 @@ public class user {
     private String userName;
     private String password;
     private String userType;
+    private String userState;
 
     public Integer getUserId() {
         return userId;
@@ -45,5 +46,13 @@ public class user {
 
     public void setUserType(String userType) {
         this.userType = userType;
+    }
+
+    public String getUserState() {
+        return userState;
+    }
+
+    public void setUserState(String userState) {
+        this.userState = userState;
     }
 }

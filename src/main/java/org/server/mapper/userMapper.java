@@ -23,8 +23,8 @@ public interface userMapper {
     @Select("select * from user where userAccount = #{account} and userType = #{type}")
     public IPage<user> selectByAccountAndType(Page page, String account, String type);
 
-    @Select("select * from user where userId = #{userId}")
-    public user findById(Integer userId);
+    @Select("select * from user where userAccount = #{account}")
+    public user findByAccount(String account);
 
     @Delete("delete from user where userId = #{userId}")
     public Integer deleteById(Integer userId);
@@ -34,8 +34,8 @@ public interface userMapper {
     public Integer update(Integer userId, String userName, String password);
 
     @Options(useGeneratedKeys = true, keyProperty = "userId")
-    @Insert("insert into user(userAccount,userName,password,userType) " +
-            "values(#{userAccount},#{userName},#{password},#{userType})")
+    @Insert("insert into user(userAccount,userName,password,userType,userState) " +
+            "values(#{userAccount},#{userName},#{password},#{userType},#{userState})")
     public Integer add(user user);
 
     @Select("select * from user where userAccount = #{userAccount} and password = #{password}")

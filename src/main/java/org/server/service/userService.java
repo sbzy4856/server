@@ -17,7 +17,7 @@ public interface userService {
 
     IPage<user> selectByAccountAndType(Page<user> page, String account, String type);
 
-    public user findById(Integer userId);
+    public user findByAccount(String account);
 
     public Integer deleteById(Integer userId);
 
