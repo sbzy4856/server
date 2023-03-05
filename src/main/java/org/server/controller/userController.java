@@ -1,6 +1,9 @@
 package org.server.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.server.api.ApiResultHandler;
+import org.server.entity.user;
 import org.server.entity.user;
 import org.server.entity.ApiResult;
 import org.server.serviceImpl.userServiceImpl;
@@ -19,9 +22,24 @@ public class userController {
     }
 
     @GetMapping("/user")
-    public ApiResult findAll() {
+    public ApiResult findAll(@RequestParam("size") Integer size, @RequestParam("page") Integer page,
+                             @RequestParam("account") String account, @RequestParam("type") String type) {
         System.out.println("查询全部");
-        return ApiResultHandler.success(userServiceimpl.findAll());
+        Page<user> userPage = new Page<>(page, size);
+        if (account == "" && type == "") {
+            IPage<user> userIPage = userServiceimpl.findAll(userPage);
+            return ApiResultHandler.buildApiResult(200, "查询所有公告", userIPage);
+        } else if ("".equals(account) && !"".equals(type)) {
+            IPage<user> userIPage = userServiceimpl.selectByType(userPage, type);
+            return ApiResultHandler.buildApiResult(200, "通过状态查找", userIPage);
+        } else if (!"".equals(account) && "".equals(type)) {
+            IPage<user> userIPage = userServiceimpl.selectByAccount(userPage, account);
+            return ApiResultHandler.buildApiResult(200, "通过标题查找", userIPage);
+        } else {
+            IPage<user> userIPage = userServiceimpl.selectByAccountAndType(userPage, account, type);
+            return ApiResultHandler.buildApiResult(200, "通过标题和状态查找", userIPage);
+        }
+
     }
 
     @GetMapping("/user/{userId}")
@@ -48,7 +66,6 @@ public class userController {
 
     @PostMapping("/login")
     public ApiResult login(@RequestBody user user) {
-
         String userAccount = user.getUserAccount();
         String password = user.getPassword();
         user userRes = userServiceimpl.userLogin(userAccount, password);

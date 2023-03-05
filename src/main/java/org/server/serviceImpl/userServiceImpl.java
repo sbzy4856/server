@@ -1,5 +1,8 @@
 package org.server.serviceImpl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.server.entity.user;
 import org.server.entity.user;
 import org.server.mapper.userMapper;
 import org.server.service.userService;
@@ -15,8 +18,20 @@ public class userServiceImpl implements userService {
     private userMapper userMapper;
 
     @Override
-    public List<user> findAll() {
-        return userMapper.findAll();
+    public IPage<user> findAll(Page<user> page) {
+        return userMapper.findAll(page);
+    }
+
+    public IPage<user> selectByAccount(Page<user> page, String account) {
+        return userMapper.selectByAccount(page, account);
+    }
+
+    public IPage<user> selectByType(Page<user> page, String type) {
+        return userMapper.selectByType(page, type);
+    }
+
+    public IPage<user> selectByAccountAndType(Page<user> page, String account, String type) {
+        return userMapper.selectByAccountAndType(page, account, type);
     }
 
     @Override
@@ -31,7 +46,7 @@ public class userServiceImpl implements userService {
 
     @Override
     public Integer update(Integer userId, user user) {
-        return userMapper.update(userId, user);
+        return userMapper.update(userId, user.getUserName(), user.getPassword());
     }
 
     @Override

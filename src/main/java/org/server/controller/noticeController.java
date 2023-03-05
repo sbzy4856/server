@@ -50,9 +50,10 @@ public class noticeController {
     }
 
     @PutMapping("/notice/{noticeId}")
-    public ApiResult update(@PathVariable("noticeId") Integer noticeId, notice notice) {
+    public ApiResult update(@PathVariable("noticeId") Integer noticeId, @RequestBody notice notice) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String date = sdf.format(new Date());
+        System.out.println(notice.getNoticeContent());
         return ApiResultHandler.success(noticeServiceimpl.update(noticeId, notice));
     }
 
@@ -69,11 +70,6 @@ public class noticeController {
         String date = sdf.format(new Date());
         notice.setUpdateTime(date);
         notice.setHandler("管理员");
-        System.out.println(notice.getHandler());
-        System.out.println(notice.getNoticeContent());
-        System.out.println(notice.getNoticeState());
-        System.out.println(notice.getUpdateTime());
-        System.out.println(notice.getNoticeTitle());
         return ApiResultHandler.success(noticeServiceimpl.add(notice));
     }
 

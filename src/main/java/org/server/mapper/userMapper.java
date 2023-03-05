@@ -1,5 +1,8 @@
 package org.server.mapper;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.server.entity.user;
 import org.server.entity.user;
 import org.apache.ibatis.annotations.*;
 
@@ -9,7 +12,16 @@ import java.util.List;
 public interface userMapper {
 
     @Select("select * from user")
-    public List<user> findAll();
+    public IPage<user> findAll(Page page);
+
+    @Select("select * from user where userAccount = #{account}")
+    public IPage<user> selectByAccount(Page page, String account);
+
+    @Select("select * from user where userType = #{type}")
+    public IPage<user> selectByType(Page page, String type);
+
+    @Select("select * from user where userAccount = #{account} and userType = #{type}")
+    public IPage<user> selectByAccountAndType(Page page, String account, String type);
 
     @Select("select * from user where userId = #{userId}")
     public user findById(Integer userId);
@@ -19,7 +31,7 @@ public interface userMapper {
 
     @Update("update user set userName = #{userName}," +
             "password = #{password} where userId = #{userId}")
-    public Integer update(Integer userId, user user);
+    public Integer update(Integer userId, String userName, String password);
 
     @Options(useGeneratedKeys = true, keyProperty = "userId")
     @Insert("insert into user(userAccount,userName,password,userType) " +

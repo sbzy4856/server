@@ -41,7 +41,7 @@ public class noticeServiceImpl implements noticeService {
 
     @Override
     public Integer update(Integer noticeId, notice notice) {
-        return noticeMapper.update(noticeId, notice);
+        return noticeMapper.update(noticeId, notice.getNoticeContent(), notice.getNoticeTitle());
     }
 
     public Integer updateState(Integer noticeId, String noticeState) {

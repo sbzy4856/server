@@ -26,7 +26,7 @@ public interface noticeMapper {
 
     @Update("update notice set noticeContent = #{noticeContent}," +
             "noticeTitle = #{noticeTitle} where noticeId = #{noticeId}")
-    public Integer update(Integer noticeId, notice notice);
+    public Integer update(Integer noticeId, String noticeContent, String noticeTitle);
 
     @Update("update notice set noticeState = #{noticeState} where noticeId = #{noticeId}")
     public Integer updateState(Integer noticeId, String noticeState);
