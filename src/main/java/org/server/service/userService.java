@@ -21,7 +21,7 @@ public interface userService {
 
     public Integer deleteById(Integer userId);
 
-    public Integer update(Integer userId, user user);
+    public Integer update(user user);
 
     public Integer add(user user);
 

@@ -44,8 +44,8 @@ public class userServiceImpl implements userService {
     }
 
     @Override
-    public Integer update(Integer userId, user user) {
-        return userMapper.update(userId, user.getUserName(), user.getPassword());
+    public Integer update(user user) {
+        return userMapper.update(user);
     }
 
     @Override
