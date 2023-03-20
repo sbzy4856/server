@@ -7,6 +7,9 @@ public class user {
     private String password;
     private String userType;
     private String userState;
+    private String mobile;
+    private String email;
+    private String birthday;
 
     public Integer getUserId() {
         return userId;
@@ -54,5 +57,29 @@ public class user {
 
     public void setUserState(String userState) {
         this.userState = userState;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 }

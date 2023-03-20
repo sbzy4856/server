@@ -4,21 +4,27 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.server.api.ApiResultHandler;
 import org.server.entity.user;
-import org.server.entity.user;
+import org.server.entity.log;
 import org.server.entity.ApiResult;
 import org.server.serviceImpl.userServiceImpl;
+import org.server.serviceImpl.logServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @RestController
 public class userController {
 
     private userServiceImpl userServiceimpl;
+    private logServiceImpl logServiceImpl;
 
     @Autowired
-    public userController(userServiceImpl userServiceimpl) {
+    public userController(userServiceImpl userServiceimpl,logServiceImpl logServiceImpl) {
         this.userServiceimpl = userServiceimpl;
+        this.logServiceImpl = logServiceImpl;
     }
 
     @GetMapping("/user")
@@ -78,8 +84,17 @@ public class userController {
         String password = user.getPassword();
         user userRes = userServiceimpl.userLogin(userAccount, password);
         if (userRes != null) {
+            if (userRes.getUserType().equals("学生")) {
+                log log = new log();
+                log.setLogAccount(userRes.getUserAccount());
+                log.setLogName(userRes.getUserName());
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String date = sdf.format(new Date());
+                log.setLogTime(date);
+                logServiceImpl.add(log);
+            }
             return ApiResultHandler.buildApiResult(200, "请求成功", userRes);
         }
-        return ApiResultHandler.buildApiResult(400, "账号或密码错误", null);
+        return ApiResultHandler.buildApiResult(400, "账号或密码错误，如果忘记密码请联系管理员重置密码", null);
     }
 }
