@@ -3,7 +3,6 @@ package org.server.mapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.server.entity.user;
-import org.server.entity.user;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

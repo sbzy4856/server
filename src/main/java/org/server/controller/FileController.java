@@ -1,8 +1,13 @@
 package org.server.controller;
 
+import cn.hutool.core.io.resource.InputStreamResource;
 import cn.hutool.extra.servlet.ServletUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +18,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.URLEncoder;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
@@ -87,6 +93,81 @@ public class FileController {
         }
 
         return "download";
+    }
+
+    /**
+     * 使用Hutool实现文件下载
+     *
+     * @param fileName 要下载的文件名
+     * @param response
+     */
+    @GetMapping("/download/hutool")
+    @ResponseBody
+    public void downloadByHutool(@RequestParam(value = "fileName") String fileName,
+                                 HttpServletResponse response) {
+        //防止中文乱码
+        response.setCharacterEncoding("UTF-8");
+        ServletUtil.write(response, new File(filePath + fileName));
+    }
+
+    /**
+     * 模仿hutool实现文件下载
+     *
+     * @param fileName 要下载的文件名
+     * @param response
+     * @throws IOException
+     */
+    @GetMapping("/download/hutool/self")
+    @ResponseBody
+    public void downloadBySelfAndHutool(@RequestParam(value = "fileName") String fileName,
+                                        HttpServletResponse response) throws IOException {
+
+        //设置字符编码
+        response.setCharacterEncoding("UTF-8");
+
+        //以下模仿hutool进行相应设置
+        //设置内容类型
+        response.setHeader("Content-Type", "application/octet-stream");
+        //设置文件名，是解决中文乱码的关键
+        response.setHeader("Content-Disposition", String.format("attachment;filename=\"%s\"", URLEncoder.encode(fileName, "UTF-8")));
+
+        //将文件取出，并写到response
+        FileInputStream fileInputStream = new FileInputStream(filePath + fileName);
+        OutputStream outputStream = response.getOutputStream();
+        byte[] bytes = new byte[1024];
+        int length;
+        while ((length = fileInputStream.read(bytes)) != -1) {
+            outputStream.write(bytes, 0, length);
+        }
+        fileInputStream.close();
+        outputStream.flush();
+        outputStream.close();
+    }
+
+    /**
+     * 通过返回值方式，实现文件下载
+     *
+     * @param fileName 文件名
+     * @return 文件流和请求头信息
+     * @throws IOException
+     */
+    @GetMapping("/download/return")
+    @ResponseBody
+    public ResponseEntity<InputStreamResource> download(@RequestParam(value = "fileName") String fileName) throws IOException {
+        // 读取文件
+        String path = filePath + fileName;
+        FileSystemResource file = new FileSystemResource(path);
+
+        // 设置响应头
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Disposition", String.format("attachment; filename=\"%s\"", file.getFilename()));
+
+        return ResponseEntity
+                .ok()
+                .headers(headers)
+                .contentLength(file.contentLength())
+                .contentType(MediaType.parseMediaType("application/octet-stream"))
+                .body(new InputStreamResource(file.getInputStream()));
     }
 
     /**
