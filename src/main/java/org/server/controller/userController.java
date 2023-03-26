@@ -55,7 +55,7 @@ public class userController {
 
     @PutMapping("/user")
     public ApiResult update(@RequestBody user user) {
-        System.out.println(user.getUserName());
+        System.out.println(user.getBirthday());
         return ApiResultHandler.success(userServiceimpl.update(user));
     }
 

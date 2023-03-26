@@ -29,8 +29,8 @@ public interface userMapper {
     @Delete("delete from user where userId = #{userId}")
     public Integer deleteById(Integer userId);
 
-    @Update("update user set userName = #{userName},userType = #{userType},userState = #{userState}," +
-            "password = #{password},userAccount = #{userAccount} where userId = #{userId}")
+    @Update("update user set userName = #{userName},userType = #{userType},userState = #{userState},email = #{email}," +
+            "password = #{password},userAccount = #{userAccount},birthday = #{birthday},mobile = #{mobile} where userId = #{userId}")
     public Integer update(user user);
 
     @Options(useGeneratedKeys = true, keyProperty = "userId")
