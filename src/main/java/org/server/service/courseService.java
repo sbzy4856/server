@@ -7,12 +7,13 @@ import org.server.entity.course;
 public interface courseService {
 
     IPage<course> findAll(Page<course> page, Integer userId);
+    public course findByCourseId(Integer courseId);
 
     public Integer add(course course);
 
     public Integer update(course course);
 
-    public Integer updateProjectNum(int courseId, String projectNum);
+    public Integer updateProjectNum(int courseId, int projectNum);
 
-    public Integer updateStudentNum(int courseId, String studentNum);
+    public Integer updateStudentNum(int courseId, int studentNum);
 }

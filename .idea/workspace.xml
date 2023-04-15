@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="277eb011-6dce-45a6-b170-e20264fbe12a" name="变更" comment="课程">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/projectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/entity/project.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/projectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/service/projectService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/projectServiceImpl.java" afterDir="false" />
+    <list default="true" id="277eb011-6dce-45a6-b170-e20264fbe12a" name="变更" comment="课程和实验项目">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/controller/courseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/courseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/controller/projectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/projectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/entity/course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/entity/course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/entity/project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/entity/project.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/mapper/courseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/courseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/mapper/projectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/projectMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/service/courseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/service/courseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/courseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/courseServiceImpl.java" afterDir="false" />
     </list>
@@ -133,7 +133,7 @@
       <workItem from="1681218515020" duration="2648000" />
       <workItem from="1681469796025" duration="100000" />
       <workItem from="1681531822907" duration="35000" />
-      <workItem from="1681536857950" duration="629000" />
+      <workItem from="1681536857950" duration="4668000" />
     </task>
     <task id="LOCAL-00001" summary="``">
       <created>1677157360791</created>
@@ -254,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679820559024</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="课程和实验项目">
+      <created>1681538939504</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1681538939504</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,6 +289,7 @@
     <MESSAGE value="1" />
     <MESSAGE value="日志和用户信息" />
     <MESSAGE value="课程" />
-    <option name="LAST_COMMIT_MESSAGE" value="课程" />
+    <MESSAGE value="课程和实验项目" />
+    <option name="LAST_COMMIT_MESSAGE" value="课程和实验项目" />
   </component>
 </project>

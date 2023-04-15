@@ -5,7 +5,7 @@ public class project {
     private String projectName;
     private int courseId;
     private String courseName;
-    private int studentId;
+    private int studentNum;
     private String projectType;
 
     public int getProjectId() {
@@ -40,12 +40,12 @@ public class project {
         this.courseName = courseName;
     }
 
-    public int getStudentId() {
-        return studentId;
+    public int getStudentNum() {
+        return studentNum;
     }
 
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
+    public void setStudentNum(int studentNum) {
+        this.studentNum = studentNum;
     }
 
     public String getProjectType() {

@@ -3,9 +3,9 @@ package org.server.entity;
 public class course {
     private Integer courseId;
     private Integer teacherId;
-    private String projectNum;
+    private Integer projectNum;
     private String courseName;
-    private String studentNum;
+    private Integer studentNum;
     private String teacherName;
     private String courseState;
 
@@ -25,11 +25,11 @@ public class course {
         this.teacherId = teacherId;
     }
 
-    public String getProjectNum() {
+    public Integer getProjectNum() {
         return projectNum;
     }
 
-    public void setProjectNum(String projectNum) {
+    public void setProjectNum(Integer projectNum) {
         this.projectNum = projectNum;
     }
 
@@ -41,11 +41,11 @@ public class course {
         this.courseName = courseName;
     }
 
-    public String getStudentNum() {
+    public Integer getStudentNum() {
         return studentNum;
     }
 
-    public void setStudentNum(String studentNum) {
+    public void setStudentNum(Integer studentNum) {
         this.studentNum = studentNum;
     }
 

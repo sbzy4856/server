@@ -34,8 +34,8 @@ public class courseController {
     @PostMapping("/course")
     public ApiResult add(@RequestBody course course, @RequestParam Integer userId, @RequestParam String userName) {
         course.setCourseState("开启");
-        course.setProjectNum("0");
-        course.setStudentNum("0");
+        course.setProjectNum(0);
+        course.setStudentNum(0);
         course.setTeacherId(userId);
         course.setTeacherName(userName);
         return ApiResultHandler.success(courseServiceimpl.add(course));

@@ -9,6 +9,8 @@ import org.server.entity.course;
 public interface courseMapper {
     @Select("select * from course where teacherId = #{userId}")
     public IPage<course> findByUserId(Page page, Integer userId);
+    @Select("select * from course where courseId = #{courseId}")
+    public course findByCourseId(Integer courseId);
 
     @Options(useGeneratedKeys = true, keyProperty = "courseId")
     @Insert("insert into course(projectNum,courseName,studentNum,teacherId,teacherName,courseState)" +
@@ -21,9 +23,9 @@ public interface courseMapper {
 
     @Update("update course set projectNum = #{projectNum} " +
             "where courseId = #{courseId}")
-    public Integer updateProjectNum(int courseId, String projectNum);
+    public Integer updateProjectNum(int courseId, int projectNum);
 
     @Update("update course set studentNum = #{studentNum} " +
             "where courseId = #{courseId}")
-    public Integer updateStudentNum(int courseId, String studentNum);
+    public Integer updateStudentNum(int courseId, int studentNum);
 }

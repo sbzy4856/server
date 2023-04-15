@@ -11,11 +11,11 @@ public interface projectMapper {
     public IPage<project> findByUserId(Page page);
 
     @Options(useGeneratedKeys = true, keyProperty = "projectId")
-    @Insert("insert into project(projectName,courseId,courseName,studentId,projectType)" +
-            "values(#{projectName},#{courseId},#{courseName},#{studentId},#{projectType}")
+    @Insert("insert into project(projectName,courseId,courseName,studentNum,projectType)" +
+            "values(#{projectName},#{courseId},#{courseName},#{studentNum},#{projectType})")
     public Integer add(project project);
 
-    @Update("update project set projectName = #{projectName},courseId = #{courseId},courseName = #{courseName},studentId = #{studentId}," +
+    @Update("update project set projectName = #{projectName},courseId = #{courseId},courseName = #{courseName},studentNum = #{studentNum}," +
             "projectType = #{projectType} where projectId = #{projectId}")
     public Integer update(project project);
 

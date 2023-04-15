@@ -17,6 +17,10 @@ public class courseServiceImpl implements courseService {
         return courseMapper.findByUserId(page, userId);
     }
 
+    public course findByCourseId(Integer courseId) {
+        return courseMapper.findByCourseId(courseId);
+    }
+
     @Override
     public Integer add(course course) {
         return courseMapper.add(course);
@@ -27,11 +31,11 @@ public class courseServiceImpl implements courseService {
         return courseMapper.update(course);
     }
 
-    public Integer updateProjectNum(int courseId, String projectNum) {
+    public Integer updateProjectNum(int courseId, int projectNum) {
         return courseMapper.updateProjectNum(courseId, projectNum);
     }
 
-    public Integer updateStudentNum(int courseId, String studentNum) {
+    public Integer updateStudentNum(int courseId, int studentNum) {
         return courseMapper.updateStudentNum(courseId, studentNum);
     }
 }
