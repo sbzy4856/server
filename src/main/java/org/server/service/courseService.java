@@ -11,4 +11,8 @@ public interface courseService {
     public Integer add(course course);
 
     public Integer update(course course);
+
+    public Integer updateProjectNum(int courseId, String projectNum);
+
+    public Integer updateStudentNum(int courseId, String studentNum);
 }

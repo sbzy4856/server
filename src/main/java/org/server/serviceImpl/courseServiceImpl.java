@@ -26,4 +26,12 @@ public class courseServiceImpl implements courseService {
     public Integer update(course course) {
         return courseMapper.update(course);
     }
+
+    public Integer updateProjectNum(int courseId, String projectNum) {
+        return courseMapper.updateProjectNum(courseId, projectNum);
+    }
+
+    public Integer updateStudentNum(int courseId, String studentNum) {
+        return courseMapper.updateStudentNum(courseId, studentNum);
+    }
 }
