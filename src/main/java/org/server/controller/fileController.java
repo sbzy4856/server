@@ -1,7 +1,10 @@
 package org.server.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.server.api.ApiResultHandler;
 import org.server.entity.ApiResult;
+import org.server.entity.file;
 import org.server.entity.file;
 import org.server.serviceImpl.courseServiceImpl;
 import org.server.serviceImpl.fileServiceImpl;
@@ -93,5 +96,11 @@ public class fileController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @GetMapping("/file")
+    public ApiResult findAll(@RequestParam("size") Integer size, @RequestParam("page") Integer page,@RequestParam Integer courseId) {
+        Page<file> filePage = new Page<>(page, size);
+        IPage<file> fileIPage = fileServiceimpl.findAll(filePage,courseId);
+        return ApiResultHandler.buildApiResult(200, "查询所有文件信息", fileIPage);
     }
 }
