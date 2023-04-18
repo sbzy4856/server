@@ -26,4 +26,10 @@ public class projectServiceImpl implements projectService {
     public Integer update(project project) {
         return projectMapper.update(project);
     }
+
+    public Integer updateStudentNum(int projectId, int studentNum) {
+        return projectMapper.updateStudentNum(projectId, studentNum);
+    }
+
+    ;
 }

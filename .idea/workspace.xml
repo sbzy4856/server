@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="277eb011-6dce-45a6-b170-e20264fbe12a" name="变更" comment="文件">
+    <list default="true" id="277eb011-6dce-45a6-b170-e20264fbe12a" name="变更" comment="文件管理">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/studentProjectController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/entity/studentProject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/studentProjectMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/service/studentProjectService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/studentProjectServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/controller/fileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/fileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/entity/file.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/entity/file.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/mapper/fileMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/fileMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/mapper/projectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/projectMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/service/projectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/service/projectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/projectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/projectServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,31 +56,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/11270/Desktop/train-server",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.build.tools.auto.reload": "ALL",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "spring.configuration.checksum": "cf1e8c14e54505f60aa10ceb8d5d8ab3",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/11270/Desktop/train-server&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.build.tools.auto.reload&quot;: &quot;ALL&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;cf1e8c14e54505f60aa10ceb8d5d8ab3&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\11270\Desktop\FinishDesigning\server\src\main" />
@@ -126,7 +137,14 @@
       <workItem from="1681469796025" duration="100000" />
       <workItem from="1681531822907" duration="35000" />
       <workItem from="1681536857950" duration="8632000" />
-      <workItem from="1681609155737" duration="5386000" />
+      <workItem from="1681609155737" duration="12523000" />
+      <workItem from="1681693704021" duration="350000" />
+      <workItem from="1681694081110" duration="1823000" />
+      <workItem from="1681778749141" duration="818000" />
+      <workItem from="1681796936286" duration="7000" />
+      <workItem from="1681797280984" duration="70000" />
+      <workItem from="1681798138696" duration="1707000" />
+      <workItem from="1681823234506" duration="3259000" />
     </task>
     <task id="LOCAL-00001" summary="``">
       <created>1677157360791</created>
@@ -268,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681613205668</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="文件管理">
+      <created>1681614795654</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1681614795654</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +324,7 @@
     <MESSAGE value="课程和实验项目" />
     <MESSAGE value="添加修改实验项目" />
     <MESSAGE value="文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="文件" />
+    <MESSAGE value="文件管理" />
+    <option name="LAST_COMMIT_MESSAGE" value="文件管理" />
   </component>
 </project>

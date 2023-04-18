@@ -11,4 +11,6 @@ public interface projectService {
     public Integer add(project project);
 
     public Integer update(project project);
+
+    public Integer updateStudentNum(int projectId, int studentNum);
 }

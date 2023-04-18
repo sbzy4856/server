@@ -21,4 +21,8 @@ public interface projectMapper {
 
     @Delete("delete from project where projectId = #{projectId}")
     public Integer deleteById(Integer projectId);
+
+    @Update("update project set studentNum = #{studentNum} " +
+            "where projectId = #{projectId}")
+    public Integer updateStudentNum(int projectId, int studentNum);
 }

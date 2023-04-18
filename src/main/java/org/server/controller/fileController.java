@@ -9,8 +9,11 @@ import org.server.entity.file;
 import org.server.serviceImpl.courseServiceImpl;
 import org.server.serviceImpl.fileServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,10 +24,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.UUID;
 
 @RestController
 public class fileController {
     private fileServiceImpl fileServiceimpl;
+
     @Autowired
     public fileController(fileServiceImpl fileServiceimpl) {
         this.fileServiceimpl = fileServiceimpl;
@@ -32,15 +37,17 @@ public class fileController {
 
     @RequestMapping(path = "/upload/teacher", method = RequestMethod.POST)
     public ApiResult teacherFileUpload(@RequestParam("file") MultipartFile multipartFile, @RequestParam Integer userId, @RequestParam Integer courseId,
-                                       @RequestParam String userName,@RequestParam String courseName) throws IOException {
+                                       @RequestParam String userName, @RequestParam String courseName) throws IOException {
         java.io.File f = new java.io.File("E:\\springboot_save_file\\teacher\\");
         if (!f.exists()) {
             f.mkdir();
         }
         String fileName = "E:\\springboot_save_file\\teacher\\" + multipartFile.getOriginalFilename();
-        java.io.File file = new java.io.File(fileName);
+        String outfileName = "E:\\springboot_save_file\\teacher\\" + UUID.randomUUID() + "_"+ new Date() + fileName.substring(fileName.lastIndexOf("."));
+        java.io.File file = new java.io.File(outfileName);
         multipartFile.transferTo(file);
         file fileEntity = new file();
+        fileEntity.setOutfileName(outfileName);
         fileEntity.setFilePath(fileName);
         fileEntity.setFileName(multipartFile.getOriginalFilename());
         fileEntity.setType("teacher");
@@ -52,12 +59,12 @@ public class fileController {
         String date = sdf.format(new Date());
         fileEntity.setUploadTime(date);
         fileServiceimpl.add(fileEntity);
-        return ApiResultHandler.buildApiResult(200, "文件地址", fileName);
+        return ApiResultHandler.buildApiResult(200, "文件地址", outfileName);
     }
 
     @RequestMapping(path = "/upload/student", method = RequestMethod.POST)
     public ApiResult studentFileUpload(@RequestParam("file") MultipartFile multipartFile, @RequestParam Integer userId, @RequestParam Integer courseId,
-                                       @RequestParam String userName,@RequestParam String courseName) throws IOException {
+                                       @RequestParam String userName, @RequestParam String courseName) throws IOException {
         java.io.File f = new java.io.File("E:\\springboot_save_file\\student\\");
         if (!f.exists()) {
             f.mkdir();
@@ -68,7 +75,7 @@ public class fileController {
         file fileEntity = new file();
         fileEntity.setFilePath(fileName);
         fileEntity.setFileName(multipartFile.getOriginalFilename());
-        fileEntity.setType("teacher");
+        fileEntity.setType("student");
         fileEntity.setUserId(userId);
         fileEntity.setUserName(userName);
         fileEntity.setCourseId(courseId);
@@ -80,8 +87,8 @@ public class fileController {
         return ApiResultHandler.buildApiResult(200, "文件地址", fileName);
     }
 
-    @RequestMapping(path = "/showImage", method = RequestMethod.GET)
-    public void showImage(@RequestParam("file") String filePath, HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping(path = "/download/student", method = RequestMethod.GET)
+    public ApiResult studentDownload(@RequestParam("file") String filePath, HttpServletRequest request, HttpServletResponse response) {
         response.setContentType(request.getSession().getServletContext().getMimeType(filePath));
         response.setHeader("Content-Disposition", "attachment;filename=" + filePath);
         try {
@@ -96,11 +103,13 @@ public class fileController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return ApiResultHandler.buildApiResult(200, "文件地址", response);
     }
+
     @GetMapping("/file")
-    public ApiResult findAll(@RequestParam("size") Integer size, @RequestParam("page") Integer page,@RequestParam Integer courseId) {
+    public ApiResult findAll(@RequestParam("size") Integer size, @RequestParam("page") Integer page, @RequestParam Integer courseId) {
         Page<file> filePage = new Page<>(page, size);
-        IPage<file> fileIPage = fileServiceimpl.findAll(filePage,courseId);
+        IPage<file> fileIPage = fileServiceimpl.findAll(filePage, courseId);
         return ApiResultHandler.buildApiResult(200, "查询所有文件信息", fileIPage);
     }
 }
