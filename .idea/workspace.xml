@@ -4,20 +4,22 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="277eb011-6dce-45a6-b170-e20264fbe12a" name="变更" comment="文件管理">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/WebMvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/studentProjectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/entity/studentProject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/studentProjectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/service/studentProjectService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/studentProjectServiceImpl.java" afterDir="false" />
+    <list default="true" id="277eb011-6dce-45a6-b170-e20264fbe12a" name="变更" comment="学员关联实验项目">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/emailController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/controller/fileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/fileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/controller/projectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/projectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/controller/studentProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/controller/studentProjectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/entity/file.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/entity/file.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/mapper/fileMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/fileMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/mapper/projectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/projectMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/mapper/studentProjectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/mapper/studentProjectMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/service/projectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/service/projectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/service/studentProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/service/studentProjectService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/projectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/projectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/studentProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/serviceImpl/studentProjectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +67,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/11270/Desktop/train-server&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/11270/Desktop/FinishDesigning/server&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -144,7 +146,19 @@
       <workItem from="1681796936286" duration="7000" />
       <workItem from="1681797280984" duration="70000" />
       <workItem from="1681798138696" duration="1707000" />
-      <workItem from="1681823234506" duration="3259000" />
+      <workItem from="1681823234506" duration="4898000" />
+      <workItem from="1681864990819" duration="1683000" />
+      <workItem from="1681907696404" duration="3674000" />
+      <workItem from="1681951257053" duration="1574000" />
+      <workItem from="1681958956213" duration="155000" />
+      <workItem from="1682127969164" duration="1214000" />
+      <workItem from="1682138216369" duration="631000" />
+      <workItem from="1682251936590" duration="1760000" />
+      <workItem from="1682397896884" duration="524000" />
+      <workItem from="1682404589340" duration="1320000" />
+      <workItem from="1682411085447" duration="116000" />
+      <workItem from="1682411249323" duration="64000" />
+      <workItem from="1683179671346" duration="2739000" />
     </task>
     <task id="LOCAL-00001" summary="``">
       <created>1677157360791</created>
@@ -293,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681614795654</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="学员关联实验项目">
+      <created>1681826787417</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1681826787417</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,6 +346,10 @@
     <MESSAGE value="添加修改实验项目" />
     <MESSAGE value="文件" />
     <MESSAGE value="文件管理" />
-    <option name="LAST_COMMIT_MESSAGE" value="文件管理" />
+    <MESSAGE value="学员关联实验项目" />
+    <option name="LAST_COMMIT_MESSAGE" value="学员关联实验项目" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/server$application.ic" NAME="application 覆盖结果" MODIFIED="1682252997518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

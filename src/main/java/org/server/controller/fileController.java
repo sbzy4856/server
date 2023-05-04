@@ -43,10 +43,14 @@ public class fileController {
             f.mkdir();
         }
         String fileName = "E:\\springboot_save_file\\teacher\\" + multipartFile.getOriginalFilename();
-        String outfileName = "E:\\springboot_save_file\\teacher\\" + UUID.randomUUID() + "_"+ new Date() + fileName.substring(fileName.lastIndexOf("."));
-        java.io.File file = new java.io.File(outfileName);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String outfileName = simpleDateFormat.format(new Date()) + "_" + UUID.randomUUID().toString() + fileName.substring(fileName.lastIndexOf("."));
+        String outfilePath = "E:\\springboot_save_file\\teacher\\" + outfileName;
+        System.out.println(outfilePath);
+        java.io.File file = new java.io.File(outfilePath);
         multipartFile.transferTo(file);
         file fileEntity = new file();
+        fileEntity.setOutfilePath(outfilePath);
         fileEntity.setOutfileName(outfileName);
         fileEntity.setFilePath(fileName);
         fileEntity.setFileName(multipartFile.getOriginalFilename());

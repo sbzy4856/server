@@ -7,8 +7,11 @@ import org.server.entity.studentProject;
 
 @Mapper
 public interface studentProjectMapper {
-    @Select("select * from student_project where courseId = #{courseId}")
-    public IPage<studentProject> findByCourseId(Page page, Integer courseId);
+    @Select("select * from student_project where projectId = #{projectId}")
+    public IPage<studentProject> findByProjectId(Page page, Integer projectId);
+
+    @Select("select * from student_project where projectId = #{projectId} and studentId = #{studentId}")
+    public studentProject findByProjectIdAndStudentId(Integer projectId, Integer studentId);
 
     @Insert("insert into student_project(studentId,studentName,courseId,courseName,projectId,projectName)" +
             "values(#{studentId},#{studentName},#{courseId},#{courseName},#{projectId},#{projectName})")

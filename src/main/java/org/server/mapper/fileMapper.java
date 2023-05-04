@@ -13,8 +13,8 @@ public interface fileMapper {
     public file findByFileId(Integer fileId);
 
     @Options(useGeneratedKeys = true, keyProperty = "fileId")
-    @Insert("insert into file(filePath,outfileName,fileName,type,userId,userName,courseId,courseName,uploadTime)" +
-            "values(#{filePath},#{outfileName},#{fileName},#{type},#{userId},#{userName},#{courseId},#{courseName},#{uploadTime})")
+    @Insert("insert into file(filePath,outfilePath,outfileName,fileName,type,userId,userName,courseId,courseName,uploadTime)" +
+            "values(#{filePath},#{outfilePath},#{outfileName},#{fileName},#{type},#{userId},#{userName},#{courseId},#{courseName},#{uploadTime})")
     public Integer add(file file);
 
     @Update("update file set filePath = #{filePath},fileName = #{fileName},type = #{type},userId = #{userId}," +

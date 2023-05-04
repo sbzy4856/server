@@ -13,8 +13,12 @@ public class studentProjectServiceImpl implements studentProjectService {
     private org.server.mapper.studentProjectMapper studentProjectMapper;
 
     @Override
-    public IPage<studentProject> findByCourseId(Page<studentProject> page, Integer courseId) {
-        return studentProjectMapper.findByCourseId(page, courseId);
+    public IPage<studentProject> findByProjectId(Page<studentProject> page, Integer projectId) {
+        return studentProjectMapper.findByProjectId(page, projectId);
+    }
+
+    public studentProject findByProjectIdAndStudentId(Integer projectId, Integer studentId) {
+        return studentProjectMapper.findByProjectIdAndStudentId(projectId, studentId);
     }
 
     @Override

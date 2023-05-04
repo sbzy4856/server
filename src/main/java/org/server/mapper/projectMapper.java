@@ -8,7 +8,13 @@ import org.server.entity.project;
 @Mapper
 public interface projectMapper {
     @Select("select * from project")
-    public IPage<project> findByUserId(Page page);
+    public IPage<project> findAll(Page page);
+
+    @Select("select * from project where courseId = #{courseId}")
+    public IPage<project> findByCourseId(Page page, Integer courseId);
+
+    @Select("select * from project where projectId = #{projectId}")
+    public project findByProjectId(Integer projectId);
 
     @Options(useGeneratedKeys = true, keyProperty = "projectId")
     @Insert("insert into project(projectName,courseId,courseName,studentNum,projectType)" +

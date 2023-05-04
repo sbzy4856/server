@@ -2,6 +2,7 @@ package org.server.entity;
 
 public class file {
     private Integer fileId;
+    private String outfilePath;
     private String outfileName;
     private String filePath;
     private String fileName;
@@ -18,6 +19,14 @@ public class file {
 
     public void setFileId(Integer fileId) {
         this.fileId = fileId;
+    }
+
+    public String getOutfilePath() {
+        return outfilePath;
+    }
+
+    public void setOutfilePath(String outfilePath) {
+        this.outfilePath = outfilePath;
     }
 
     public String getOutfileName() {

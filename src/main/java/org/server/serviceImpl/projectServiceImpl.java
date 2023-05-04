@@ -14,7 +14,15 @@ public class projectServiceImpl implements projectService {
 
     @Override
     public IPage<project> findAll(Page<project> page) {
-        return projectMapper.findByUserId(page);
+        return projectMapper.findAll(page);
+    }
+
+    public IPage<project> findByCourseId(Page<project> page, Integer courseId) {
+        return projectMapper.findByCourseId(page, courseId);
+    }
+
+    public project findByProjectId(Integer projectId) {
+        return projectMapper.findByProjectId(projectId);
     }
 
     @Override

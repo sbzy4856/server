@@ -7,7 +7,9 @@ import org.server.entity.studentProject;
 
 public interface studentProjectService {
 
-    IPage<studentProject> findByCourseId(Page<studentProject> page, Integer courseId);
+    IPage<studentProject> findByProjectId(Page<studentProject> page, Integer projectId);
+
+    public studentProject findByProjectIdAndStudentId(Integer projectId, Integer studentId);
 
     public Integer add(studentProject studentProject);
 

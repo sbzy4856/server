@@ -18,7 +18,7 @@ public class projectController {
     private courseServiceImpl courseServiceimpl;
 
     @Autowired
-    public projectController(projectServiceImpl projectServiceimpl,courseServiceImpl courseServiceimpl) {
+    public projectController(projectServiceImpl projectServiceimpl, courseServiceImpl courseServiceimpl) {
         this.projectServiceimpl = projectServiceimpl;
         this.courseServiceimpl = courseServiceimpl;
     }
@@ -30,19 +30,26 @@ public class projectController {
         return ApiResultHandler.buildApiResult(200, "查询实验计划", projectIPage);
     }
 
+    @GetMapping("/project/{courseId}")
+    public ApiResult findByCourseId(@RequestParam("size") Integer size, @RequestParam("page") Integer page, @PathVariable("courseId") Integer courseId) {
+        Page<project> projectPage = new Page<>(page, size);
+        IPage<project> projectIPage = projectServiceimpl.findByCourseId(projectPage, courseId);
+        return ApiResultHandler.buildApiResult(200, "查询实验计划", projectIPage);
+    }
+
     @PutMapping("/project/{courseId}")
-    public ApiResult update(@RequestBody project project,@PathVariable("courseId") Integer courseId) {
-        if (courseId == project.getCourseId()){
+    public ApiResult update(@RequestBody project project, @PathVariable("courseId") Integer courseId) {
+        if (courseId == project.getCourseId()) {
             return ApiResultHandler.success(projectServiceimpl.update(project));
-        }else{
+        } else {
             course newCourse = courseServiceimpl.findByCourseId(project.getCourseId());
             int newProjectNum = newCourse.getProjectNum();
             newProjectNum++;
             course oldCourse = courseServiceimpl.findByCourseId(courseId);
             int oldProjectNum = oldCourse.getProjectNum();
             oldProjectNum--;
-            courseServiceimpl.updateProjectNum(newCourse.getCourseId(),newProjectNum);
-            courseServiceimpl.updateProjectNum(oldCourse.getCourseId(),oldProjectNum);
+            courseServiceimpl.updateProjectNum(newCourse.getCourseId(), newProjectNum);
+            courseServiceimpl.updateProjectNum(oldCourse.getCourseId(), oldProjectNum);
             return ApiResultHandler.success(projectServiceimpl.update(project));
         }
     }
@@ -52,7 +59,7 @@ public class projectController {
         course course = courseServiceimpl.findByCourseId(project.getCourseId());
         int projectNum = course.getProjectNum();
         projectNum++;
-        courseServiceimpl.updateProjectNum(course.getCourseId(),projectNum);
+        courseServiceimpl.updateProjectNum(course.getCourseId(), projectNum);
         return ApiResultHandler.success(projectServiceimpl.add(project));
     }
 }
