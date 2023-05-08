@@ -7,7 +7,9 @@ import org.server.entity.course;
 public interface courseService {
 
     IPage<course> findByUserId(Page<course> page, Integer userId);
+
     IPage<course> findAll(Page page);
+
     public course findByCourseId(Integer courseId);
 
     public Integer add(course course);

@@ -22,7 +22,7 @@ public class userController {
     private logServiceImpl logServiceImpl;
 
     @Autowired
-    public userController(userServiceImpl userServiceimpl,logServiceImpl logServiceImpl) {
+    public userController(userServiceImpl userServiceimpl, logServiceImpl logServiceImpl) {
         this.userServiceimpl = userServiceimpl;
         this.logServiceImpl = logServiceImpl;
     }
@@ -99,10 +99,10 @@ public class userController {
     }
 
     @PostMapping("/active")
-    public ApiResult active(@RequestBody user user,@RequestParam String code) {
+    public ApiResult active(@RequestBody user user, @RequestParam String code) {
         System.out.println(code);
         System.out.println(code.trim());
-        if(code.trim().equals("e138dba626f8")){
+        if (code.trim().equals("e138dba626f8")) {
             user.setUserState("已激活");
             userServiceimpl.update(user);
             return ApiResultHandler.buildApiResult(200, "激活成功", true);

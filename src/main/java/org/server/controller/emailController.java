@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.Random;
+
 @RestController
 public class emailController {
     @Resource
@@ -47,7 +48,7 @@ public class emailController {
             javaMailSender.send(msg);
         } catch (MailException ex) {
             System.err.println(ex.getMessage());
-            return ApiResultHandler.buildApiResult(400, "发送失败",false);
+            return ApiResultHandler.buildApiResult(400, "发送失败", false);
         }
         return ApiResultHandler.buildApiResult(200, "发送成功", true);
     }

@@ -9,6 +9,8 @@ public interface studentProjectService {
 
     IPage<studentProject> findByProjectId(Page<studentProject> page, Integer projectId);
 
+    IPage<studentProject> findByStudentId(Page<studentProject> page, Integer studentId);
+
     public studentProject findByProjectIdAndStudentId(Integer projectId, Integer studentId);
 
     public Integer add(studentProject studentProject);

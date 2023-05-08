@@ -10,6 +10,9 @@ public interface studentProjectMapper {
     @Select("select * from student_project where projectId = #{projectId}")
     public IPage<studentProject> findByProjectId(Page page, Integer projectId);
 
+    @Select("select * from student_project where studentId = #{studentId}")
+    public IPage<studentProject> findByStudentId(Page page, Integer studentId);
+
     @Select("select * from student_project where projectId = #{projectId} and studentId = #{studentId}")
     public studentProject findByProjectIdAndStudentId(Integer projectId, Integer studentId);
 

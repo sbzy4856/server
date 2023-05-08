@@ -9,6 +9,7 @@ import org.server.entity.file;
 public interface fileMapper {
     @Select("select * from file where courseId = #{courseId}")
     public IPage<file> findByCourseId(Page page, Integer courseId);
+
     @Select("select * from file where fileId = #{fileId}")
     public file findByFileId(Integer fileId);
 

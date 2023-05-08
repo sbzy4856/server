@@ -17,7 +17,7 @@ public class courseServiceImpl implements courseService {
         return courseMapper.findByUserId(page, userId);
     }
 
-    public IPage<course> findAll(Page page){
+    public IPage<course> findAll(Page page) {
         return courseMapper.findAll(page);
     }
 

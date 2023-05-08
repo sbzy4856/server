@@ -30,6 +30,13 @@ public class studentProjectController {
         return ApiResultHandler.buildApiResult(200, "查询实验计划", studentProjectIPage);
     }
 
+    @GetMapping("/studentProject/studentId")
+    public ApiResult findByStudentId(@RequestParam("size") Integer size, @RequestParam("page") Integer page, @RequestParam("studentId") Integer studentId) {
+        Page<studentProject> studentProjectPage = new Page<>(page, size);
+        IPage<studentProject> studentProjectIPage = studentProjectServiceimpl.findByStudentId(studentProjectPage, studentId);
+        return ApiResultHandler.buildApiResult(200, "查询实验计划", studentProjectIPage);
+    }
+
     @PutMapping("/studentProject")
     public ApiResult update(@RequestBody studentProject studentProject) {
         return ApiResultHandler.success(studentProjectServiceimpl.update(studentProject));
