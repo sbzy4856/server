@@ -1,6 +1,8 @@
 package org.server.controller;
 
 import lombok.Value;
+import org.server.api.ApiResultHandler;
+import org.server.entity.ApiResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
@@ -34,19 +36,19 @@ public class emailController {
 
     @RequestMapping("/sendEmail")
     @ResponseBody
-    public boolean sendEmail(@RequestParam("email") String email) {
+    public ApiResult sendEmail(@RequestParam("email") String email) {
         SimpleMailMessage msg = new SimpleMailMessage();
         msg.setFrom("1127023277@qq.com");
         msg.setBcc();
         msg.setTo(email);
         msg.setSubject("验证码");
-        msg.setText("606db82e-2af4-4a3f-bf21-e138dba626f8");
+        msg.setText("e138dba626f8");
         try {
             javaMailSender.send(msg);
         } catch (MailException ex) {
             System.err.println(ex.getMessage());
-            return false;
+            return ApiResultHandler.buildApiResult(400, "发送失败",false);
         }
-        return true;
+        return ApiResultHandler.buildApiResult(200, "发送成功", true);
     }
 }

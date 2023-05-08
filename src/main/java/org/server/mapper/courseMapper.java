@@ -9,6 +9,10 @@ import org.server.entity.course;
 public interface courseMapper {
     @Select("select * from course where teacherId = #{userId}")
     public IPage<course> findByUserId(Page page, Integer userId);
+
+    @Select("select * from course where courseState = '开启'")
+    public IPage<course> findAll(Page page);
+
     @Select("select * from course where courseId = #{courseId}")
     public course findByCourseId(Integer courseId);
 

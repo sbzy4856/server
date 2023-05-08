@@ -13,8 +13,12 @@ public class courseServiceImpl implements courseService {
     private org.server.mapper.courseMapper courseMapper;
 
     @Override
-    public IPage<course> findAll(Page<course> page, Integer userId) {
+    public IPage<course> findByUserId(Page<course> page, Integer userId) {
         return courseMapper.findByUserId(page, userId);
+    }
+
+    public IPage<course> findAll(Page page){
+        return courseMapper.findAll(page);
     }
 
     public course findByCourseId(Integer courseId) {

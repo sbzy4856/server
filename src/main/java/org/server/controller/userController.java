@@ -97,4 +97,16 @@ public class userController {
         }
         return ApiResultHandler.buildApiResult(400, "账号或密码错误，如果忘记密码请联系管理员重置密码", null);
     }
+
+    @PostMapping("/active")
+    public ApiResult active(@RequestBody user user,@RequestParam String code) {
+        System.out.println(code);
+        System.out.println(code.trim());
+        if(code.trim().equals("e138dba626f8")){
+            user.setUserState("已激活");
+            userServiceimpl.update(user);
+            return ApiResultHandler.buildApiResult(200, "激活成功", true);
+        }
+        return ApiResultHandler.buildApiResult(400, "验证码错误", false);
+    }
 }

@@ -20,9 +20,16 @@ public class courseController {
     }
 
     @GetMapping("/course")
-    public ApiResult findAll(@RequestParam("size") Integer size, @RequestParam("page") Integer page, @RequestParam("userId") Integer userId) {
+    public ApiResult findByUserId(@RequestParam("size") Integer size, @RequestParam("page") Integer page, @RequestParam("userId") Integer userId) {
         Page<course> coursePage = new Page<>(page, size);
-        IPage<course> courseIPage = courseServiceimpl.findAll(coursePage, userId);
+        IPage<course> courseIPage = courseServiceimpl.findByUserId(coursePage, userId);
+        return ApiResultHandler.buildApiResult(200, "查询课程", courseIPage);
+    }
+
+    @GetMapping("/course/list")
+    public ApiResult findAll(@RequestParam("size") Integer size, @RequestParam("page") Integer page) {
+        Page<course> coursePage = new Page<>(page, size);
+        IPage<course> courseIPage = courseServiceimpl.findAll(coursePage);
         return ApiResultHandler.buildApiResult(200, "查询课程", courseIPage);
     }
 
