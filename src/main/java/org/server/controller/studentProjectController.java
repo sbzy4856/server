@@ -37,6 +37,7 @@ public class studentProjectController {
         return ApiResultHandler.buildApiResult(200, "查询实验计划", studentProjectIPage);
     }
 
+    ///////////
     @PutMapping("/studentProject")
     public ApiResult update(@RequestBody studentProject studentProject) {
         return ApiResultHandler.success(studentProjectServiceimpl.update(studentProject));

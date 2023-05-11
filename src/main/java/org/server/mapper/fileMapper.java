@@ -13,6 +13,9 @@ public interface fileMapper {
     @Select("select * from file where fileId = #{fileId}")
     public file findByFileId(Integer fileId);
 
+    @Select("select * from file where userId = #{userId} and type = #{type}")
+    public IPage<file> findByTypeAndUserId(Page page, Integer userId, String type);
+
     @Options(useGeneratedKeys = true, keyProperty = "fileId")
     @Insert("insert into file(filePath,outfilePath,outfileName,fileName,type,userId,userName,courseId,courseName,uploadTime)" +
             "values(#{filePath},#{outfilePath},#{outfileName},#{fileName},#{type},#{userId},#{userName},#{courseId},#{courseName},#{uploadTime})")

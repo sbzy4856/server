@@ -21,6 +21,10 @@ public class fileServiceImpl implements fileService {
         return fileMapper.findByFileId(fileId);
     }
 
+    public IPage<file> findByTypeAndUserId(Page<file> page, Integer userId, String type) {
+        return fileMapper.findByTypeAndUserId(page, userId, type);
+    }
+
     @Override
     public Integer add(file file) {
         return fileMapper.add(file);

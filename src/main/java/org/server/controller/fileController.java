@@ -6,6 +6,7 @@ import org.server.api.ApiResultHandler;
 import org.server.entity.ApiResult;
 import org.server.entity.file;
 import org.server.entity.file;
+import org.server.entity.log;
 import org.server.serviceImpl.courseServiceImpl;
 import org.server.serviceImpl.fileServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,9 +75,15 @@ public class fileController {
             f.mkdir();
         }
         String fileName = "E:\\springboot_save_file\\student\\" + multipartFile.getOriginalFilename();
-        java.io.File file = new java.io.File(fileName);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String outfileName = simpleDateFormat.format(new Date()) + "_" + UUID.randomUUID().toString() + fileName.substring(fileName.lastIndexOf("."));
+        String outfilePath = "E:\\springboot_save_file\\student\\" + outfileName;
+        System.out.println(outfilePath);
+        java.io.File file = new java.io.File(outfilePath);
         multipartFile.transferTo(file);
         file fileEntity = new file();
+        fileEntity.setOutfilePath(outfilePath);
+        fileEntity.setOutfileName(outfileName);
         fileEntity.setFilePath(fileName);
         fileEntity.setFileName(multipartFile.getOriginalFilename());
         fileEntity.setType("student");
@@ -88,26 +95,15 @@ public class fileController {
         String date = sdf.format(new Date());
         fileEntity.setUploadTime(date);
         fileServiceimpl.add(fileEntity);
-        return ApiResultHandler.buildApiResult(200, "文件地址", fileName);
+        return ApiResultHandler.buildApiResult(200, "文件地址", outfileName);
     }
 
-    @RequestMapping(path = "/download/student", method = RequestMethod.GET)
-    public ApiResult studentDownload(@RequestParam("file") String filePath, HttpServletRequest request, HttpServletResponse response) {
-        response.setContentType(request.getSession().getServletContext().getMimeType(filePath));
-        response.setHeader("Content-Disposition", "attachment;filename=" + filePath);
-        try {
-            InputStream in = Files.newInputStream(Paths.get(filePath));
-            OutputStream out = response.getOutputStream();
-            byte[] b = new byte[1024];
-            while (in.read(b) != -1) {
-                out.write(b);
-            }
-            in.close();
-            out.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return ApiResultHandler.buildApiResult(200, "文件地址", response);
+    @RequestMapping(path = "/file/student", method = RequestMethod.GET)
+    public ApiResult getStudentFiles(@RequestParam("size") Integer size, @RequestParam("page") Integer page,
+                                     @RequestParam Integer userId, @RequestParam String type) {
+        Page<file> filePage = new Page<>(page, size);
+        IPage<file> fileIPage = fileServiceimpl.findByTypeAndUserId(filePage, userId, type);
+        return ApiResultHandler.buildApiResult(200, "查询学生上传文件", fileIPage);
     }
 
     @GetMapping("/file")

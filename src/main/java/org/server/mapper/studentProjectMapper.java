@@ -20,8 +20,8 @@ public interface studentProjectMapper {
             "values(#{studentId},#{studentName},#{courseId},#{courseName},#{projectId},#{projectName})")
     public Integer add(studentProject studentProject);
 
-    @Update("update student_project set studentName = #{studentName},courseId = #{courseId},courseName = #{courseName}," +
-            "score = #{score} where studentId = #{studentId}")
+    @Update("update student_project set score = #{score} " +
+            "where projectId = #{projectId} and studentId = #{studentId}")
     public Integer update(studentProject studentProject);
 
     @Delete("delete from studentProject where studentProjectId = #{studentProjectId}")

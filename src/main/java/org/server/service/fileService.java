@@ -11,6 +11,8 @@ public interface fileService {
 
     public file findByFileId(Integer fileId);
 
+    public IPage<file> findByTypeAndUserId(Page<file> page, Integer userId, String type);
+
     public Integer add(file file);
 
     public Integer update(file file);
