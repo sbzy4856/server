@@ -7,7 +7,7 @@ import org.server.entity.file;
 
 @Mapper
 public interface fileMapper {
-    @Select("select * from file where courseId = #{courseId}")
+    @Select("select * from file where courseId = #{courseId} and type = 'teacher'")
     public IPage<file> findByCourseId(Page page, Integer courseId);
 
     @Select("select * from file where fileId = #{fileId}")
